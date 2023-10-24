@@ -1,41 +1,142 @@
-import { Flatfile } from "@flatfile/api";
+import { Flatfile } from '@flatfile/api'
 
 export const workbook: Pick<
   Flatfile.CreateWorkbookConfig,
-  "name" | "labels" | "sheets" | "actions"
+  'name' | 'labels' | 'sheets' | 'actions'
 > = {
-  name: "All Data",
-  labels: ["pinned"],
+  name: 'Patient Bill',
+  labels: ['pinned'],
   sheets: [
     {
-      name: "Contacts",
-      slug: "contacts",
+      name: 'Patient Bill',
+      slug: 'PatientBill',
       fields: [
+        // Patient Fields
+
         {
-          key: "firstName",
-          type: "string",
-          label: "First Name",
+          key: 'patientFirstName',
+          type: 'string',
+          label: 'Patient First Name',
+          constraints: [
+            {
+              type: 'required',
+            },
+          ],
         },
         {
-          key: "lastName",
-          type: "string",
-          label: "Last Name",
+          key: 'patientLastName',
+          type: 'string',
+          label: 'Patient Last Name',
+          constraints: [
+            {
+              type: 'required',
+            },
+          ],
         },
+
+        // Does this need a validation?
+
         {
-          key: "email",
-          type: "string",
-          label: "Email",
+          key: 'patientEmrId',
+          type: 'string',
+          label: 'Patient EMR ID',
+        },
+
+        // Add US Phone Validation
+
+        {
+          key: 'patientPhoneNumber',
+          type: 'string',
+          label: 'Patient Phone Number',
+        },
+
+        // Add Email Validation
+
+        {
+          key: 'patientEmail',
+          type: 'string',
+          label: 'Patient Email',
+        },
+
+        // Add ISO Date Validation
+
+        {
+          key: 'patientDateOfBirth',
+          type: 'date',
+          label: 'Patient Date of Birth',
+          constraints: [
+            {
+              type: 'required',
+            },
+          ],
+        },
+
+        // Guarantor Fields
+
+        {
+          key: 'guarantorFirstName',
+          type: 'string',
+          label: 'Guarantor First Name',
+        },
+
+        {
+          key: 'guarantorLastName',
+          type: 'string',
+          label: 'Guarantor Last Name',
+        },
+
+        // Add US Phone Validation
+
+        {
+          key: 'guarantorPhone',
+          type: 'string',
+          label: 'Guarantor Phone',
+        },
+
+        // Add Email Validation
+
+        {
+          key: 'guarantorEmail',
+          type: 'string',
+          label: 'Guarantor Email',
+        },
+
+        {
+          key: 'visitEmrId',
+          type: 'string',
+          label: 'Visit EMR ID',
+        },
+
+        // Add ISO Date Validation
+
+        {
+          key: 'serviceDate',
+          type: 'date',
+          label: 'Service Date',
+          constraints: [
+            {
+              type: 'required',
+            },
+          ],
+        },
+
+        // // Does this need a validation?
+
+        {
+          key: 'pendingBalance',
+          type: 'string',
+          label: 'Pending Balance',
         },
       ],
     },
   ],
   actions: [
     {
-      operation: "submitActionFg",
-      mode: "foreground",
-      label: "Submit foreground",
-      description: "Submit data to webhook.site",
+      operation: 'submitActionFg',
+      mode: 'foreground',
+      label: 'Submit foreground',
+      description: 'Submit data to webhook.site',
       primary: true,
     },
   ],
-};
+}

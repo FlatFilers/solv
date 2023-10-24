@@ -5,8 +5,8 @@ import { listener } from "./listeners/simple";
 
 const spaceProps: ISpace = {
   name: "Embedded Space",
-  publishableKey: "YOUR_PRIVATE_KEY",
-  environmentId: "YOUR_ENVIRONMENT_ID",
+  publishableKey: "pk_3d58fedecb4f4bfcb4069aa4fba74227",
+  environmentId: "us_env_OkhzeYtv",
 };
 
 const Space = ({
@@ -19,14 +19,14 @@ const Space = ({
     workbook,
     listener,
     sidebarConfig: {
-      showSidebar: false,
+      showSidebar: true,
     },
     themeConfig: {
       root: {
-        primaryColor: "red",
+        primaryColor: "#E30C79",
       },
       sidebar: {
-        logo: "https://images.ctfassets.net/hjneo4qi4goj/gL6Blz3kTPdZXWknuIDVx/7bb7c73d93b111ed542d2ed426b42fd5/flatfile.svg",
+        logo: "https://www.solvhealth.com/images/logo/solv_dark.svg",
       },
     },
     closeSpace: {
