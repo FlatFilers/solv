@@ -4,7 +4,7 @@ import { workbook } from "./workbook";
 import { listener } from "./listeners/simple";
 
 const spaceProps: ISpace = {
-  name: "Embedded Space",
+  name: "Patient Bill",
   publishableKey: "pk_3d58fedecb4f4bfcb4069aa4fba74227",
   environmentId: "us_env_OkhzeYtv",
 };

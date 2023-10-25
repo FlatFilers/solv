@@ -134,9 +134,11 @@ export const workbook: Pick<
     {
       operation: 'submitActionFg',
       mode: 'foreground',
-      label: 'Submit foreground',
-      description: 'Submit data to webhook.site',
+      label: 'Submit Data to Solv',
+      description: 'Submit data to Solv',
       primary: true,
+      tooltip: 'Submit data to Solv',
+      confirm: true,
     },
   ],
 }
