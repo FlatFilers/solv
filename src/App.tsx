@@ -42,21 +42,24 @@ export default function App() {
 
   return (
     <div className="content">
-      <h2>
-        <code>&lt;Flatfile /&gt;</code>
-      </h2>
-      <p>Embed Flatfile in just a few lines of code.</p>
-      {/*Button to trigger the modal */}
-      <div>
-        <button
-          className="contrast"
-          onClick={() => {
-            setShowSpace(!showSpace);
-          }}
-        >
-          {showSpace === true ? "Close" : "Open and create new"} Space
-        </button>
-        {showSpace && <Space setShowSpace={setShowSpace} />}
+      <div className="centered">
+        <img src={"https://www.solvhealth.com/dir/solv-og.png"} alt="Solv Health" className="logo" />
+        <h2>
+          Welcome to <span className="highlight">Solv Health</span>
+        </h2>
+        <p>Manage your patient bills with ease.</p>
+        {/*Button to trigger the modal */}
+        <div>
+          <button
+            className="contrast"
+            onClick={() => {
+              setShowSpace(!showSpace);
+            }}
+          >
+            {showSpace ? "Close" : "Open"} Patient Bill Space
+          </button>
+          {showSpace && <Space setShowSpace={setShowSpace} />}
+        </div>
       </div>
     </div>
   );

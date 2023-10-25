@@ -128,6 +128,19 @@ export const workbook: Pick<
           label: 'Pending Balance',
         },
       ],
+      actions: [
+        {
+          operation: 'dedupe-email',
+          mode: 'background',
+          label: 'Remove Duplicate Records',
+          description:
+            'This action will remove duplicate records based on the values in the Patient Email field and keep the latest record',
+          tooltip:
+            'This action will remove duplicate records based on the values in the Patient Email field and keep the latest record',
+          confirm: true,
+          primary: true,
+        },
+      ],
     },
   ],
   actions: [

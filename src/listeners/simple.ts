@@ -1,31 +1,20 @@
 import { FlatfileListener } from '@flatfile/listener'
 import api from '@flatfile/api'
-import { FlatfileRecord, recordHook } from '@flatfile/plugin-record-hook'
+import { recordHook } from '@flatfile/plugin-record-hook'
 import {
   isValidEmail,
   isValidUSPhoneNumber,
   isValidISODate,
+  validateField,
 } from '../utils/validationUtils'
 
 /**
  * Example Listener
  */
 export const listener = FlatfileListener.create((listener) => {
-  listener.on('**', (event) => {
-    console.log(`Received event: ${event.topic}`)
-  })
-
-  function validateField(
-    record: FlatfileRecord,
-    fieldName: string,
-    validator: (value: string) => boolean,
-    errorMessage: string
-  ) {
-    const value = record.get(fieldName)
-    if (value != null && (typeof value !== 'string' || !validator(value))) {
-      record.addError(fieldName, errorMessage)
-    }
-  }
+  // listener.on('**', (event) => {
+  //   console.log(`Received event: ${event}`)
+  // })
 
   listener.use(
     recordHook('PatientBill', (record) => {

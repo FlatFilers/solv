@@ -1,3 +1,5 @@
+import { FlatfileRecord } from '@flatfile/plugin-record-hook'
+
 /**
  * Validates the format of an email address.
  * @param email The email address to validate.
@@ -27,4 +29,23 @@ export function isValidUSPhoneNumber(phoneNumber: string): boolean {
 export function isValidISODate(date: string): boolean {
   const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/
   return isoDateRegex.test(date)
+}
+
+/**
+ * Validates a field based on a provided validation function.
+ * @param record The record being validated.
+ * @param fieldName The name of the field to validate.
+ * @param validator A function that takes a string and returns a boolean.
+ * @param errorMessage The error message to show if validation fails.
+ */
+export function validateField(
+  record: FlatfileRecord,
+  fieldName: string,
+  validator: (value: string) => boolean,
+  errorMessage: string
+): void {
+  const value = record.get(fieldName)
+  if (value != null && (typeof value !== 'string' || !validator(value))) {
+    record.addError(fieldName, errorMessage)
+  }
 }
