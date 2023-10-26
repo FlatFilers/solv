@@ -24,6 +24,7 @@ const Space = ({
     themeConfig: {
       root: {
         primaryColor: "#E30C79",
+        dangerColor: "#E30C79",
       },
       sidebar: {
         logo: "https://www.solvhealth.com/images/logo/solv_dark.svg",
