@@ -85,7 +85,7 @@ body {
 /* The close button in top right to close modal */
 .flatfile_displayAsModal .flatfile-close-button {
   display: block !important;
-  margin: 20px !important;
+  margin: 40px !important;
 }
 
 /* The icon for the close button in top right to close modal */

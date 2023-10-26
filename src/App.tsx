@@ -47,7 +47,7 @@ export default function App() {
         <h2>
           Welcome to <span className="highlight">Solv Health</span>
         </h2>
-        <p>Manage your patient bills with ease.</p>
+        <p>Import your patient bills with ease.</p>
         {/*Button to trigger the modal */}
         <div>
           <button

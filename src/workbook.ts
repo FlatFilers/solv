@@ -148,7 +148,8 @@ export const workbook: Pick<
       operation: 'submitActionFg',
       mode: 'foreground',
       label: 'Submit Data to Solv',
-      description: 'Submit data to Solv',
+      description:
+        'This action submits all of the data in the workbook to Solv.  Once the process completes you will be able to view the data in Solv.',
       primary: true,
       tooltip: 'Submit data to Solv',
       confirm: true,

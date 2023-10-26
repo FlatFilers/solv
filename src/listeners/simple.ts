@@ -8,14 +8,7 @@ import {
   validateField,
 } from '../utils/validationUtils'
 
-/**
- * Example Listener
- */
 export const listener = FlatfileListener.create((listener) => {
-  // listener.on('**', (event) => {
-  //   console.log(`Received event: ${event}`)
-  // })
-
   listener.use(
     recordHook('PatientBill', (record) => {
       validateField(
@@ -71,7 +64,7 @@ export const listener = FlatfileListener.create((listener) => {
         await api.jobs.complete(jobId, {
           outcome: {
             acknowledge: true,
-            message: 'This is now complete.',
+            message: 'Data has been succesfully imported to Solv.',
             next: {
               type: 'wait',
             },
