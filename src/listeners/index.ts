@@ -1,5 +1,6 @@
 import { FlatfileListener } from '@flatfile/listener'
 import { dedupePlugin } from '@flatfile/plugin-dedupe'
+import mergeSelectedRecords from '../jobs/sheet/mergeSelectedRecords'
 
 /**
  * This default export is used by Flatfile to register event handlers for any
@@ -20,4 +21,6 @@ export default function (listener: FlatfileListener) {
       keep: 'last',
     })
   )
+
+  listener.use(mergeSelectedRecords)
 }

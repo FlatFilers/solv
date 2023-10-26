@@ -51,6 +51,7 @@ body {
   --ff-dialog-border-radius: 4px !important;
   --ff-border-radius: 5px !important;
   --ff-bg-fade: rgba(0, 0, 0, 0.2) !important;
+  --ff-danger-color: #E30C79 !important;
 }
 
 /* The default mount element */
@@ -150,8 +151,9 @@ body {
 /* End style overrides for when Flatfile is displayed as a modal */
 
 /* The container of the error component */
-/* .ff_error_container {
-}*/
+ .ff_error_container {
+  background-color: var(--ff-primary-color) !important;
+}
 
 /* The heading text you see in the error component */
 /* .ff_error_heading {
